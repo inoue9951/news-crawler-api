@@ -10,6 +10,8 @@ gem 'puma', '~> 3.7'
 gem 'mysql2'
 gem 'annotate'
 gem 'spreadsheet'
+gem 'whenever', require: false
+
 
 group :development, :test do
 	#pry
