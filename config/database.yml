@@ -1,0 +1,16 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  pool: 5
+  username: crawler
+  password: crawler
+  host: localhost
+
+development:
+  <<: *default
+  database: crawler-api-development
+
+test:
+  <<: *default
+  database: crawler-api-test
