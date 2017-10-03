@@ -12,6 +12,8 @@ gem 'annotate'
 gem 'spreadsheet'
 gem 'whenever', require: false
 
+gem 'selenium-webdriver'
+gem 'poltergeist'
 
 group :development, :test do
 	#pry
