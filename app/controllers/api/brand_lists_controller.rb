@@ -15,6 +15,7 @@ class Api::BrandListsController < ApplicationController
       end
       json_data = { list: data }
     end
+
     render json: json_data
   end
 end
