@@ -14,6 +14,7 @@ gem 'whenever', require: false
 
 gem 'selenium-webdriver'
 gem 'poltergeist'
+gem 'activerecord-import'
 
 group :development, :test do
 	#pry
