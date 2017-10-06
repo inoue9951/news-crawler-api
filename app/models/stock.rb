@@ -1,29 +1,22 @@
 # == Schema Information
 #
-# Table name: brand_lists
+# Table name: stocks
 #
 #  id         :integer          not null, primary key
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-
-class BrandList < ApplicationRecord
-  include BrandListCrawler
- 
-  def brand_list_crawl(url, page_url, xls_path, json_path)
-    crawler = BrandListCrawler::Crawler.new
-    crawler.crawl url, page_url, xls_path, json_path
-  end
+class Stock < ApplicationRecord
 
   def create_path(type)
     time = I18n.l self.created_at, format: :for_file
-    return "#{time}-brand-list.#{type}"
+    return "#{time}-stock-list.#{type}"
   end
 
   def get_json
    file_name = create_path 'json'
-   json_path = "app/download/brand_list/json/#{file_name}"
+   json_path = "app/download/stock/json/#{file_name}"
    json_data = File.open json_path do |file|  
      JSON.load file
    end

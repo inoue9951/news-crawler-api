@@ -5,7 +5,7 @@ require 'uri'
 require 'benchmark'
 
 
-module BrandNewsCrawler
+module NewsCrawler
   class Crawler
     include Capybara::DSL
     attr_reader :links
