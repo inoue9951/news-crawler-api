@@ -24,6 +24,7 @@ group :development, :test do
 	gem 'pry-stack_explorer'
   #rspec
 	gem 'rspec-rails', '~> 3.6'
+  gem 'factory_girl_rails'
 end
 
 group :development do

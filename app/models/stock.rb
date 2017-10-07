@@ -11,12 +11,11 @@ class Stock < ApplicationRecord
 
   def create_path(type)
     time = I18n.l self.created_at, format: :for_file
-    return "#{time}-stock-list.#{type}"
+    return "app/download/stock/#{type}/#{time}-stock-list.#{type}"
   end
 
   def get_json
-   file_name = create_path 'json'
-   json_path = "app/download/stock/json/#{file_name}"
+   json_path = create_path
    json_data = File.open json_path do |file|  
      JSON.load file
    end

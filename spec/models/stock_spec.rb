@@ -10,5 +10,18 @@
 require 'rails_helper'
 
 RSpec.describe Stock, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  example "stockがDBへ保存される" do
+    count = Stock.count
+    Stock.create
+    expect(Stock.count).to eq (count + 1)
+  end
+
+  example "jsonファイルへのパスが生成できる" do
+    stock = Stock.create
+    time = I18n.l stock.created_at, format: :for_file
+    json_path = stock.create_path 'json'
+    expect(json_path).to eq ("app/download/stock/json/#{time}-stock-list.json")
+  end
+
 end

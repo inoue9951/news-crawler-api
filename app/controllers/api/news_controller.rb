@@ -5,7 +5,7 @@ class Api::NewsController < ApplicationController
     if stock_name
       data[:list] = News.where("stock_name = '#{stock_name}'").order('date DESC')    
     end      
-   render json: data
+    render json: data
   end
 
 end

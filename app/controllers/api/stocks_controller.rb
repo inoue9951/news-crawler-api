@@ -2,6 +2,7 @@ class Api::StocksController < ApplicationController
 
   def index
     stock = Stock.order('created_at DESC').first
+    binding.pry
     json_data = stock.get_json  
 
     category = check_query "category"
