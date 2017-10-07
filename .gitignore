@@ -16,5 +16,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+/app/download/brand_list/json/*
+/app/download/brand_list/xls/*
 
 .byebug_history

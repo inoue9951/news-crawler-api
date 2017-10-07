@@ -10,6 +10,11 @@ gem 'puma', '~> 3.7'
 gem 'mysql2'
 gem 'annotate'
 gem 'spreadsheet'
+gem 'whenever', require: false
+
+gem 'selenium-webdriver'
+gem 'poltergeist'
+gem 'activerecord-import'
 
 group :development, :test do
 	#pry
@@ -19,6 +24,7 @@ group :development, :test do
 	gem 'pry-stack_explorer'
   #rspec
 	gem 'rspec-rails', '~> 3.6'
+  gem 'factory_girl_rails'
 end
 
 group :development do
