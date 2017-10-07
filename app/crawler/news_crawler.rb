@@ -5,7 +5,7 @@ require 'uri'
 require 'benchmark'
 
 
-module BrandNewsCrawler
+module NewsCrawler
   class Crawler
     include Capybara::DSL
     attr_reader :links
@@ -59,7 +59,7 @@ module BrandNewsCrawler
         url = link[:href]
         title = link.find("h3").text
         date = link.find(".status").text[/（(.*?)）/, 1]
-        @links.push({ company_name: @keyword, title: title, url: url, date: Time.parse(date) })
+        @links.push({ stock_name: @keyword, title: title, url: url, date: Time.parse(date) })
       end
     end
 

@@ -3,7 +3,7 @@ require 'open-uri'
 require 'spreadsheet'
 require 'json'
 
-module BrandListCrawler
+module StockListCrawler
 
   class Crawler
 
@@ -36,11 +36,11 @@ module BrandListCrawler
       def save_json(xls_path, json_path)
         xls = Spreadsheet.open xls_path, 'r'
         xls_sheet = xls.worksheet 0
-        brand_list = xls_sheet.rows
-        brand_list.delete_at 0
+        stock_list = xls_sheet.rows
+        stock_list.delete_at 0
 
-        brand_array = []
-        brand_list.each do |row|
+        stock_array = []
+        stock_list.each do |row|
           data = {
             code: format("%.0f", row[1]),
             name: row[2],
@@ -52,9 +52,9 @@ module BrandListCrawler
             scale_code: row[8] != '-' ? format("%.0f", row[8]) : nil,
             scale: row[9] != '-' ? row[9] : nil
           }
-          brand_array.push data
+          stock_array.push data
         end
-        json = { list: brand_array }
+        json = { list: stock_array }
         File.open json_path, "w" do |file|
           file.puts JSON.pretty_generate json
         end

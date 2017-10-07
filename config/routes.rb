@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   namespace :api, { format: 'json' } do
-    resources :brand_lists, only: [:index]
-    resources :brand_news, only: [:index]
+    resources :stocks, only: [:index]
+    resources :news, only: [:index]
   end 
 end
