@@ -15,7 +15,7 @@ class Stock < ApplicationRecord
   end
 
   def get_json
-   json_path = create_path
+   json_path = create_path "json"
    json_data = File.open json_path do |file|  
      JSON.load file
    end
